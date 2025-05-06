@@ -1,13 +1,15 @@
 ---
-import Logo from '../../assets/logo.svg';
-import MobileNavigation from './nav/MobileNavigation.astro';
+import Logo from "../../assets/logo.svg";
+import MobileNavigation from "./nav/MobileNavigation.astro";
 ---
 
-<header class="bg-white">
-  <Logo class="block md:hidden" width={125} />
-  <Logo class="hidden md:block lg:hidden" width={150} />
-  <Logo class="hidden lg:block xl:hidden" width={200} />
-  <Logo class="hidden xl:block" width={250} />
+<header class="bg-white flex justify-between">
+  <a href="/" class="p-4" aria-label="Лого (линк към начална страница)">
+    <Logo class="block md:hidden" width={125} />
+    <Logo class="hidden md:block lg:hidden" width={150} />
+    <Logo class="hidden lg:block xl:hidden" width={200} />
+    <Logo class="hidden xl:block" width={250} />
+  </a>
 
   <MobileNavigation />
 </header>
