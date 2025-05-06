@@ -17,7 +17,7 @@ const { links, text, isMobile = true } = Astro.props;
     <div class="arrow">
       <slot name="arrow" />
     </div>
-    <BodyText className="text-gray-700 text-xl! hover:text-secondary-500 hover:underline" selector="span">{text}</BodyText>
+    <BodyText className="text-gray-700 text-xl hover:text-secondary-500 hover:underline" selector="span">{text}</BodyText>
   </button>
   <ul class="flex flex-col gap-8">
     {links.map(link => <li class="block"> <MobileLinkItem className="dropdown-menu-item max:w-max ml-4" text={link.text} href={link.href!} /></li>)}
@@ -25,7 +25,7 @@ const { links, text, isMobile = true } = Astro.props;
   </ul>
 </div>
 <script>
-  const dropdownMenus = document.querySelectorAll(".mobile-dropdown-menu");
+  const dropdownMenus = document.querySelectorAll(".mobile-dropdown-menu, .dropdown-menu");
   for (const menu of dropdownMenus) {
     const ul = menu.querySelector('ul')!;
     const button = menu.querySelector('button');
@@ -80,7 +80,7 @@ const { links, text, isMobile = true } = Astro.props;
     width: max-content;
   }
 
-  .active {
+  .mobile-dropdown-menu .active {
     margin-bottom: 16px;
   }
 </style>

@@ -1,10 +1,11 @@
 ---
 import Logo from "../../assets/logo.svg";
+import DesktopNavigationMenu from "./nav/DesktopNavigationMenu.astro";
 import MobileNavigation from "./nav/MobileNavigation.astro";
 import MobileNavigationMenu from "./nav/MobileNavigationMenu.astro";
 ---
 
-<header class="bg-white flex justify-between w-screen">
+<header class="bg-white flex justify-between w-screen items-center">
   <a href="/" class="p-4" aria-label="Лого (линк към начална страница)">
     <Logo class="block md:hidden" width={125} />
     <Logo class="hidden md:block lg:hidden" width={150} />
@@ -13,4 +14,5 @@ import MobileNavigationMenu from "./nav/MobileNavigationMenu.astro";
   </a>
 
   <MobileNavigation />
+  <DesktopNavigationMenu />
 </header>
