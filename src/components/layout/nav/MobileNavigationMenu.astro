@@ -1,0 +1,13 @@
+---
+import { links } from "../../../common/navigation";
+
+
+---
+
+<dialog id="mobile-nav">
+  <nav>
+    <ul>
+      {links.map(link => <li>{link.text}</li>)}
+    </ul>
+  </nav>
+</dialog>
