@@ -1,0 +1,30 @@
+---
+import BurgerMenu from "../../../assets/icons/burger-menu.svg";
+---
+
+<button
+  class="block lg:hidden cursor-pointer rounded-full p-1 motion-safe:transition-all"
+  id="nav-menu-button"
+  aria-label="Отвори навигационно меню"
+>
+  <BurgerMenu width={48} height={48} />
+</button>
+
+<style scoped>
+  #nav-menu-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  #nav-menu-button:active {
+    opacity: 0.5;
+  }
+</style>
+
+<script>
+  const button = document.querySelector('#nav-menu-button') as HTMLButtonElement | null;
+
+  button?.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('Clicked');
+  });
+</script>
