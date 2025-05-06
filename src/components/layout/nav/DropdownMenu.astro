@@ -1,0 +1,86 @@
+---
+import type { NavigationLink } from "../../../common/navigation";
+import BodyText from "../../typography/BodyText.astro";
+import MobileLinkItem from "./MobileLinkItem.astro";
+
+interface Props {
+  links: NavigationLink[];
+  text: string;
+  isMobile?: boolean;
+}
+
+const { links, text, isMobile = true } = Astro.props;
+---
+
+<div class:list={[isMobile ? 'mobile-dropdown-menu' : 'dropdown-menu', 'w-max']}>
+  <button class="flex items-center gap-2 cursor-pointer text-gray-700 hover:text-secondary-500">
+    <div class="arrow">
+      <slot name="arrow" />
+    </div>
+    <BodyText className="text-gray-700 text-xl! hover:text-secondary-500 hover:underline" selector="span">{text}</BodyText>
+  </button>
+  <ul class="flex flex-col gap-8">
+    {links.map(link => <li class="block"> <MobileLinkItem className="dropdown-menu-item max:w-max ml-4" text={link.text} href={link.href!} /></li>)}
+    
+  </ul>
+</div>
+<script>
+  const dropdownMenus = document.querySelectorAll(".mobile-dropdown-menu");
+  for (const menu of dropdownMenus) {
+    const ul = menu.querySelector('ul')!;
+    const button = menu.querySelector('button');
+    const arrow = menu.querySelector('.arrow');
+    ul.classList.add('menu-hidden');
+
+    button?.addEventListener('click', () => {
+      ul.classList.toggle('menu-hidden');
+      button.classList.toggle('active');
+      arrow?.classList.toggle('open');
+    });
+
+    button?.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+          ul.classList.add('menu-hidden');
+          button.classList.remove('active');
+          arrow?.classList.remove('open');
+        }
+    })
+
+    const links = ul.querySelectorAll('a');
+
+    for (const link of links) {
+      link.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          ul.classList.add('menu-hidden');
+          button?.focus();
+          arrow?.classList.remove('open');
+        }
+      })
+    }
+
+    const lastLink = links[links.length - 1];
+    lastLink.addEventListener('focusout', (e) => {
+      const currentlyFocusedItem = e.relatedTarget as HTMLElement;
+      
+      if (!currentlyFocusedItem.classList.contains('dropdown-menu-item')) {
+        ul.classList.add('menu-hidden');
+        arrow?.classList.remove('open');
+        button?.classList.remove('active');
+      }
+    })
+  }
+</script>
+
+<style>
+  .mobile-dropdown-menu .arrow.open {
+    transform: rotate(90deg);
+  }
+
+  .arrow {
+    width: max-content;
+  }
+
+  .active {
+    margin-bottom: 16px;
+  }
+</style>

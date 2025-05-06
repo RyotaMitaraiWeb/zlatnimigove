@@ -1,0 +1,16 @@
+---
+import BodyText from '../../typography/BodyText.astro';
+
+interface Props {
+  text: string;
+  href: string;
+  className?: string;
+}
+
+const { text, href, className = '' } = Astro.props;
+---
+
+<a href={href} class:list={["text-gray-700 w-max flex gap-2 hover:text-secondary-500 hover:underline active:underline motion-safe:transition-all", className]}>
+  <div class="invisible w-6 h-6"></div>
+  <BodyText selector="span" className="hover:text-secondary-500 text-lg! motion-safe:transition-all">{text}</BodyText>
+</a>

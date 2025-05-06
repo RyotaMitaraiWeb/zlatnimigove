@@ -1,0 +1,25 @@
+---
+interface Props {
+  selector?: keyof HTMLElementTagNameMap;
+  className?: string;
+}
+
+const { selector = "p", className = "" } = Astro.props;
+const Tag = selector;
+---
+
+<Tag
+  class:list={[
+    "text",
+    "text-gray-700 text-sm md:text-md lg:text-lg xl:text-xl leading-sm md:leading-md lg:leading-lg xl:leading-xl",
+    className,
+  ]}
+>
+  <slot />
+</Tag>
+
+<style scoped>
+  .text {
+    font-family: Arial, sans-serif;
+  }
+</style>

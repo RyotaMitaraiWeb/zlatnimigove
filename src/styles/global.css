@@ -28,6 +28,10 @@ body {
   overflow: hidden;
 }
 
+.menu-hidden {
+  display: none;
+}
+
 @theme {
   --color-primary-100: #fcd772;
   --color-primary-200: #d4af37;
