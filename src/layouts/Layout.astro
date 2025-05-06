@@ -28,3 +28,12 @@ import '../styles/global.css';
 		height: 100%;
 	}
 </style>
+
+<script>
+	window.addEventListener('popstate', () => {
+  const dialog = document.querySelector('dialog[open]') as HTMLDialogElement | null;
+  if (dialog) {
+    dialog.close();
+  }
+});
+</script>

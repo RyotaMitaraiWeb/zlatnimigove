@@ -9,8 +9,9 @@ import MobileNavigationMenu from "./MobileNavigationMenu.astro";
   aria-label="Отвори навигационно меню"
 >
   <BurgerMenu width={48} height={48} />
-  <MobileNavigationMenu />
 </button>
+
+<MobileNavigationMenu />
 
 <style scoped>
   #nav-menu-button:hover {
@@ -32,4 +33,27 @@ import { openDialog } from "../../../util/openDialog";
     event.preventDefault();
     openDialog(dialog);
   });
+
+  const dialogs = document.querySelectorAll("dialog");
+
+  for (const dialog of dialogs) {
+    dialog.addEventListener("close", () => {
+      const html = document.querySelector('html');
+      if (history.state?.dialogOpen) {
+        history.back();
+      }
+      
+      if (html) {
+        html.style.overflow = 'auto';
+      }
+    });
+
+    dialog.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      if (event.target === dialog) {
+        dialog.close();
+      }
+    });
+  }
 </script>
