@@ -8,5 +8,6 @@ export default defineConfig({
   base: 'zlatnimigove',
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  devToolbar: { enabled: false }
 });

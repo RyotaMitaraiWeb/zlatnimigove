@@ -1,0 +1,24 @@
+---
+import ArrowDown from '../../../assets/icons/arrow-down.svg';
+import { links } from '../../../common/navigation';
+import DesktopLinkItem from './DesktopLinkItem.astro';
+import DropdownMenu from './DropdownMenu.astro';
+---
+
+<nav aria-label="Навигационно меню" class="hidden lg:block">
+  <ul class="flex gap-4">
+    {links.map(link => {
+      if (link.href) {
+        return <DesktopLinkItem text={link.text} href={link.href} />
+      }
+    
+      if (link.children) {
+        return <DropdownMenu isMobile={false} text={link.text} links={link.children}>
+          <ArrowDown slot="arrow" width={16} height={16} />
+        </DropdownMenu>
+      }
+    
+      return null;
+    })}
+  </ul>
+</nav>

@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/layout/Navigation.astro';
+import BodyText from '../components/typography/BodyText.astro';
 import '../styles/global.css';
 ---
 
@@ -12,7 +14,11 @@ import '../styles/global.css';
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+		<Navigation />
+		<main id="main">
+			<slot />
+			<BodyText>Test</BodyText>
+		</main>
 	</body>
 </html>
 
@@ -24,3 +30,12 @@ import '../styles/global.css';
 		height: 100%;
 	}
 </style>
+
+<script>
+	window.addEventListener('popstate', () => {
+  const dialog = document.querySelector('dialog[open]') as HTMLDialogElement | null;
+  if (dialog) {
+    dialog.close();
+  }
+});
+</script>

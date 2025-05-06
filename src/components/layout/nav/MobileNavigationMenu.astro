@@ -1,0 +1,30 @@
+---
+import { links } from "../../../common/navigation";
+import CloseMenuButton from "./CloseMenuButton.astro";
+import DropdownMenu from "./DropdownMenu.astro";
+import MobileLinkItem from "./MobileLinkItem.astro";
+import Arrow from "../../../assets/icons/arrow.svg";
+
+---
+
+<dialog id="mobile-nav">
+  <nav class="bg-white fixed w-screen h-screen">
+    <ul class="flex flex-col gap-8 px-4 py-8">
+      {links.map(link => {
+        if (link.href) {
+          return <MobileLinkItem text={link.text} href={link.href} />
+        }
+
+        if (link.children) {
+          return <DropdownMenu text={link.text} links={link.children}>
+            <Arrow slot="arrow" width={24} height={24} />
+          </DropdownMenu>
+        }
+
+        return null;
+      })}
+    </ul>
+
+    <CloseMenuButton />
+  </nav>
+</dialog>

@@ -1,0 +1,28 @@
+---
+import CloseMenuIcon from '../../../assets/icons/close-menu.svg';
+---
+
+<button class="absolute cursor-pointer rounded-full p-4 top-0 right-0 motion-safe:transition-all" id="close-nav-menu-button" aria-label="Затвори навигационното меню">
+  <CloseMenuIcon width={48} height={48} />
+</button>
+
+<style scoped>
+  #close-nav-menu-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  #close-nav-menu-button:active {
+    opacity: 0.5;
+  }
+</style>
+
+<script>
+  const button = document.querySelector('#close-nav-menu-button') as HTMLButtonElement | null;
+
+  button?.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const dialog = document.querySelector('#mobile-nav') as HTMLDialogElement | null;
+    dialog?.close();
+  })
+</script>
