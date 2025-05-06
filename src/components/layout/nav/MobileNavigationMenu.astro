@@ -1,5 +1,6 @@
 ---
 import { links } from "../../../common/navigation";
+import CloseMenuButton from "./CloseMenuButton.astro";
 
 
 ---
@@ -9,5 +10,6 @@ import { links } from "../../../common/navigation";
     <ul>
       {links.map(link => <li>{link.text}</li>)}
     </ul>
+    <CloseMenuButton />
   </nav>
 </dialog>
