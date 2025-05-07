@@ -12,8 +12,8 @@ const { direction = 'normal', image, imageAlt, className } = Astro.props;
 ---
 
 <section class:list={['w-full flex flex-col gap-4', direction === 'normal' ? 'lg:flex-row-reverse' : 'lg:flex-row', className]}>
-  <Image src={image} alt={imageAlt} class="w-full h-auto lg:p-4 lg:rounded" />
-  <div class="flex flex-col gap-4 p-4 pt-0 lg:pt-4 lg:w-full">
+  <Image src={image} alt={imageAlt} class="w-full lg:w-[50vw] h-auto lg:p-4 lg:rounded" />
+  <div class="flex flex-col gap-4 p-4 pt-0 lg:pt-4">
     <slot name="section-heading" />
     <slot />
   </div>
