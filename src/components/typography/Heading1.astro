@@ -1,0 +1,14 @@
+---
+interface Props {
+  selector?: keyof HTMLElementTagNameMap;
+  className?: string;
+}
+
+const { selector = 'h1', className } = Astro.props;
+const Tag = selector;
+---
+
+<Tag class:list={['font-bold text-heading-1-sm md:text-heading-1-md lg:text-heading-1-lg xl:text-heading-1-xl', className]}>
+  <slot />
+</Tag>
+
