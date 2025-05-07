@@ -5,8 +5,12 @@ import EldersPlayingQuizImage from "../assets/elders-playing-a-quiz.png";
 import EldersWatchingMovieImage from "../assets/elders-watching-movie.webp";
 import EldersPlayingChessImage from "../assets/elders-playing-chess.jpg";
 import EldersHavingADiscussion from "../assets/elders-having-a-discussion.png";
+import EldersCommunityImage from "../assets/elders-having-fun-as-a-community.jpg";
+import SomethingNewEveryWeekImage from "../assets/something-new-every-week.png";
 import Heading2 from "../components/typography/Heading2.astro";
 import LinkButton from "../components/feedback/LinkButton.astro";
+import SectionWithImage from "../components/surface/SectionWithImage.astro";
+import BodyText from "../components/typography/BodyText.astro";
 ---
 
 <Layout>
@@ -50,5 +54,35 @@ import LinkButton from "../components/feedback/LinkButton.astro";
     и идеи по разнообразни теми, както и да натрупаш такива от твоите съмишленици.
   </Card>
 
-	<LinkButton href="./grafik">Разгледай графика на събития</LinkButton>
+  <LinkButton href="./grafik">Разгледай графика на събития</LinkButton>
+
+  <SectionWithImage
+    image={EldersCommunityImage}
+    imageAlt="Пенсионери на една маса, обединени от общи цели и предизвикателства"
+    className="bg-secondary-500"
+  >
+    <Heading2 className="text-white" slot="section-heading"
+      >Ние не сме просто пенсионерски клуб – ние сме твоята общност</Heading2
+    >
+    <BodyText className="text-white">
+      В <em>Златни мигове</em> не правим неща просто за да убием време - тук е мястото,
+      в което можеш да създаваш незабравими спомени и приятели, които да те подкрепят
+      и разбират, по начини, които да направят живота ти по-пълноценен и разнообразен.
+    </BodyText>
+  </SectionWithImage>
+  <SectionWithImage
+    image={SomethingNewEveryWeekImage}
+    imageAlt="Пенсионери на една маса, обединени от общи цели и предизвикателства"
+		direction="reverse"
+  >
+    <Heading2 slot="section-heading"
+      >Нещо ново всяка седмица</Heading2
+    >
+    <BodyText>
+      Нашите събитие са <strong>тематични</strong>. Всяка седмица покрива различни сфери на интереси, било то история, спорт, музика и дори съвременни теми!
+    </BodyText>
+		<BodyText>
+			Като бонус, ние редовно избираме темите по <strong>препоръка на нашите членове</strong>. С други думи, ти имаш контрол върху това какви дейности ще се провеждат. А членовете, които са редовни и активни, ще имат възможност и пряко да участват в организирането и воденето на събития, които са значими и интересни за тях!
+		</BodyText>
+  </SectionWithImage>
 </Layout>
