@@ -1,11 +1,51 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Card from "../components/surface/Card.astro";
+import Layout from "../layouts/Layout.astro";
+import EldersPlayingQuizImage from "../assets/elders-playing-a-quiz.png";
+import EldersWatchingMovieImage from "../assets/elders-watching-movie.webp";
+import EldersPlayingChessImage from "../assets/elders-playing-chess.jpg";
+import EldersHavingADiscussion from "../assets/elders-having-a-discussion.png";
+import Heading2 from "../components/typography/Heading2.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <Card
+    className="w-70"
+    image={EldersPlayingQuizImage}
+    imageAlt="Български пенсионери, които се забавляват в игра на викторина"
+  >
+    <Heading2 slot="card-heading">Викторини</Heading2>
+    Предизвикай паметта си и научи нещо ново всяка седмица! Нашите тематични викторини
+    обединяват забавление с познание, за да поддържат ума ти активен и свеж.
+  </Card>
+  <Card
+    className="w-70"
+    image={EldersPlayingChessImage}
+    imageAlt="Български пенсионери, които се забавляват в игра на викторина"
+  >
+    <Heading2 slot="card-heading">Настолни игри</Heading2>
+    Раздвижи своята мисъл с настолни игри като шах и <span lang="en"
+      >Scrabble</span
+    >. Няма проблем ако нямаш опит с тези игри - с всеки следващ път ще ставаш
+    по-добър, и това е най-важно!
+  </Card>
+  <Card
+    className="w-70"
+    image={EldersWatchingMovieImage}
+    imageAlt="Български пенсионери, които гледат филм в непосредствена близост един до друг"
+  >
+    <Heading2 slot="card-heading">Филмови вечери</Heading2>
+    Потопи се в спомени с твоите любими филми или в нови светове с невиждани филми,
+    в компанията на сплотена общност. Подбираме както български и световни филми,
+    така и класики и съвременни филми.
+  </Card>
+  <Card
+    className="w-70"
+    image={EldersHavingADiscussion}
+    imageAlt="Български пенсионери, които се забавляват в игра на викторина"
+  >
+    <Heading2 slot="card-heading">Групови дискусии</Heading2>
+    <em>Златни мигове</em> дава възможност да споделиш твоите знания, умения, опит
+    и идеи по разнообразни теми, както и да натрупаш такива от твоите съмишленици.
+  </Card>
 </Layout>
