@@ -1,5 +1,6 @@
 ---
-import Logo from "../../assets/logo.svg";
+import { Image } from "astro:assets";
+import Logo from "../../assets/logo.png";
 import DesktopNavigationMenu from "./nav/DesktopNavigationMenu.astro";
 import MobileNavigation from "./nav/MobileNavigation.astro";
 import MobileNavigationMenu from "./nav/MobileNavigationMenu.astro";
@@ -7,10 +8,11 @@ import MobileNavigationMenu from "./nav/MobileNavigationMenu.astro";
 
 <header class="bg-white flex justify-between w-screen items-center">
   <a href="/" class="p-4" aria-label="Лого (линк към начална страница)">
-    <Logo class="block md:hidden" width={125} />
-    <Logo class="hidden md:block lg:hidden" width={150} />
-    <Logo class="hidden lg:block xl:hidden" width={200} />
-    <Logo class="hidden xl:block" width={250} />
+    <Image
+      src={Logo}
+      class="w-[125px] md:w-[150px] lg:w-[200px] xl:w-[250px]"
+      alt="Лого (линк към начална страница)"
+    />
   </a>
 
   <MobileNavigation />
