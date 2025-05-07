@@ -1,0 +1,103 @@
+---
+import BodyText from "../../typography/BodyText.astro";
+import Heading3 from "../../typography/Heading3.astro";
+import FacebookLogo from "../../../assets/icons/facebook.png";
+import LinkedInLogo from "../../../assets/icons/linkedin.png";
+import { Image } from "astro:assets";
+---
+
+<footer class="bg-gray-700 p-4 flex flex-col gap-8">
+  <BodyText className="text-gray-100">
+    Демонстративен сайт за дисциплина “Графичен дизайн” към УНСС, разработен от
+    Валентин Караджов. Всички материали са използвани единствено с учебни цели.
+    Съдържанието е само примерно и не отразява събития в реалния живот. <a
+      href="https://github.com/RyotaMitaraiWeb/zlatnimigove"
+      target="_blank"
+      class="text-secondary-100 underline"
+    >
+      Сорс код в GitHub
+    </a>
+  </BodyText>
+  <hr class="border mx-auto border-gray-100 w-9/10" />
+  <div class="flex flex-col gap-16 md:gap-8 lg:flex-row">
+    <section class="flex flex-col gap-4 lg:w-full">
+      <Heading3 selector="h2" className="text-gray-100">Следвайните ни</Heading3
+      >
+      <ul class="flex gap-4">
+        <li>
+          <a href="#">
+            <Image src={FacebookLogo} alt="Facebook" class="w-8 h-8" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Image src={LinkedInLogo} alt="LinkedIn" class="w-8 h-8" />
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="flex flex-col gap-4 lg:w-full">
+      <Heading3 selector="h2" className="text-gray-100"
+        >Полезни линкове</Heading3
+      >
+      <ul class="flex flex-col gap-4">
+        <li>
+          <a href="#">
+            <BodyText className="text-gray-100">График на събития </BodyText>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <BodyText className="text-gray-100">
+              Как да се запиша за събитие?
+            </BodyText>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <BodyText className="text-gray-100">Заявете събитие </BodyText>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <BodyText className="text-gray-100">Свържи с нас </BodyText>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="flex flex-col gap-4 lg:w-full">
+      <Heading3 selector="h2" className="text-gray-100">Контакти</Heading3>
+      <ul class="flex flex-col gap-4">
+        <li>
+          <BodyText className="text-gray-100">Телефон: 000000000</BodyText>
+        </li>
+        <li>
+          <BodyText className="text-gray-100">Адрес: Ashford Academy, Area 11, Holy Britannian Empire</BodyText>
+        </li>
+        <li>
+          <BodyText className="text-gray-100">Имейл: zlatnimigove@gmail.com</BodyText>
+        </li>
+      </ul>
+    </section>
+    <section class="flex flex-col gap-4 lg:w-full">
+      <Heading3 selector="h2" className="text-gray-100">Партньори</Heading3>
+      <ul class="flex flex-col gap-4">
+        <li>
+          <BodyText className="text-gray-100">Google</BodyText>
+        </li>
+        <li>
+          <BodyText className="text-gray-100">Facebook</BodyText>
+        </li>
+        <li>
+          <BodyText className="text-gray-100">Amazon</BodyText>
+        </li>
+        <li>
+          <BodyText className="text-gray-100">Amazon2</BodyText>
+        </li>
+        <li>
+          <BodyText className="text-gray-100">Станете партньор</BodyText>
+        </li>
+      </ul>
+    </section>
+  </div>
+</footer>
