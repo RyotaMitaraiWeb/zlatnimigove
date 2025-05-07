@@ -11,6 +11,8 @@ import Heading2 from "../components/typography/Heading2.astro";
 import LinkButton from "../components/feedback/LinkButton.astro";
 import SectionWithImage from "../components/surface/SectionWithImage.astro";
 import BodyText from "../components/typography/BodyText.astro";
+import { partners } from "../common/partners";
+import { Image } from "astro:assets";
 ---
 
 <Layout>
@@ -73,16 +75,66 @@ import BodyText from "../components/typography/BodyText.astro";
   <SectionWithImage
     image={SomethingNewEveryWeekImage}
     imageAlt="Пенсионери на една маса, обединени от общи цели и предизвикателства"
-		direction="reverse"
+    direction="reverse"
   >
-    <Heading2 slot="section-heading"
-      >Нещо ново всяка седмица</Heading2
-    >
+    <Heading2 slot="section-heading">Нещо ново всяка седмица</Heading2>
     <BodyText>
-      Нашите събитие са <strong>тематични</strong>. Всяка седмица покрива различни сфери на интереси, било то история, спорт, музика и дори съвременни теми!
+      Нашите събитие са <strong>тематични</strong>. Всяка седмица покрива
+      различни сфери на интереси, било то история, спорт, музика и дори
+      съвременни теми!
     </BodyText>
-		<BodyText>
-			Като бонус, ние редовно избираме темите по <strong>препоръка на нашите членове</strong>. С други думи, ти имаш контрол върху това какви дейности ще се провеждат. А членовете, които са редовни и активни, ще имат възможност и пряко да участват в организирането и воденето на събития, които са значими и интересни за тях!
-		</BodyText>
+    <BodyText>
+      Като бонус, ние редовно избираме темите по <strong
+        >препоръка на нашите членове</strong
+      >. С други думи, ти имаш контрол върху това какви дейности ще се
+      провеждат. А членовете, които са редовни и активни, ще имат възможност и
+      пряко да участват в организирането и воденето на събития, които са значими
+      и интересни за тях!
+    </BodyText>
   </SectionWithImage>
+  <hr class="w-9/10 border border-gray-200" />
+  <Heading2>Последни новини</Heading2>
+  <Card image={EldersPlayingChessImage} imageAlt="" className="w-72">
+    <Heading2 selector="h2">Примерна статия за шах</Heading2>
+    <div class="flex flex-col gap-8 items-center">
+      <BodyText>
+        Разберете как да играете някаква игра и какви ползи има тя за вас.
+      </BodyText>
+      <LinkButton class="w-full! text-center block" href="#"
+        >Прочети още</LinkButton
+      >
+    </div>
+  </Card>
+  <Card image={EldersPlayingChessImage} imageAlt="" className="w-72">
+    <Heading2 selector="h2">Примерна статия за шах</Heading2>
+    <div class="flex flex-col gap-8 items-center">
+      <BodyText>
+        Разберете как да играете някаква игра и какви ползи има тя за вас.
+      </BodyText>
+      <LinkButton class="w-full! text-center block" href="#"
+        >Прочети още</LinkButton
+      >
+    </div>
+  </Card>
+  <Card image={EldersPlayingChessImage} imageAlt="" className="w-72">
+    <Heading2 selector="h2">Примерна статия за шах</Heading2>
+    <div class="flex flex-col gap-8 items-center">
+      <BodyText>
+        Разберете как да играете някаква игра и какви ползи има тя за вас.
+      </BodyText>
+      <LinkButton class="w-full! text-center block" href="#"
+        >Прочети още</LinkButton
+      >
+    </div>
+  </Card>
+  <hr class="w-9/10 border border-gray-200" />
+  <section class="p-4">
+    <Heading2>Нашите партньори</Heading2>
+    <ul class="flex flex-col md:flex-row md:flex-wrap md:justify-center md:items-end gap-8 md:gap-16">
+      {partners.map((partner) => <li class="flex flex-col gap-4 items-center">
+				<Image src={partner.logo} alt="" class="max-w-25" />
+				<BodyText selector="em" className="text-center">{partner.name}</BodyText>
+			</li>)}
+    </ul>
+  </section>
 </Layout>
