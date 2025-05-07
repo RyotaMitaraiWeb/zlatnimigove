@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import EldersPlayingQuizImage from "../assets/elders-playing-a-quiz.png";
 import EldersWatchingMovieImage from "../assets/elders-watching-movie.webp";
 import EldersPlayingChessImage from "../assets/elders-playing-chess.jpg";
-import EldersHavingADiscussion from "../assets/elders-having-a-discussion.png";
+import EldersHavingADiscussion from "../assets/elders-having-a-discussion.jpg";
 import EldersCommunityImage from "../assets/elders-having-fun-as-a-community.jpg";
 import SomethingNewEveryWeekImage from "../assets/something-new-every-week.png";
 import Heading2 from "../components/typography/Heading2.astro";
@@ -27,57 +27,64 @@ import Heading1 from "../components/typography/Heading1.astro";
       ежедневието си с групови интелектуални игри и дейности, с които да
       поддържаш ума си свеж и да се запознаеш със съмишленици!
     </BodyText>
-    <LinkButton class="z-3 w-full! text-center md:w-max!" href="#">Запиши се за събитие</LinkButton>
+    <LinkButton class="z-3 w-full! text-center md:w-max!" href="#"
+      >Запиши се за събитие</LinkButton
+    >
   </section>
-  <Card
-    className="w-70"
-    image={EldersPlayingQuizImage}
-    imageAlt="Български пенсионери, които се забавляват в игра на викторина"
-  >
-    <Heading2 slot="card-heading">Викторини</Heading2>
-    <BodyText>
-      Предизвикай паметта си и научи нещо ново всяка седмица! Нашите тематични
-      викторини обединяват забавление с познание, за да поддържат ума ти активен
-      и свеж.
-    </BodyText>
-  </Card>
-  <Card
-    className="w-70"
-    image={EldersPlayingChessImage}
-    imageAlt="Български пенсионери, които се забавляват в игра на викторина"
-  >
-    <Heading2 slot="card-heading">Настолни игри</Heading2>
-    <BodyText>
-      Раздвижи своята мисъл с настолни игри като шах и Scrabble. Няма проблем
-      ако нямаш опит с тези игри - с всеки следващ път ще ставаш по-добър, и
-      това е най-важно!
-    </BodyText>
-  </Card>
-  <Card
-    className="w-70"
-    image={EldersWatchingMovieImage}
-    imageAlt="Български пенсионери, които гледат филм в непосредствена близост един до друг"
-  >
-    <Heading2 slot="card-heading">Филмови вечери</Heading2>
-    <BodyText>
-      Потопи се в спомени с твоите любими филми или в нови светове с невиждани
-      филми, в компанията на сплотена общност. Подбираме както български и
-      световни филми, така и класики и съвременни филми.
-    </BodyText>
-  </Card>
-  <Card
-    className="w-70"
-    image={EldersHavingADiscussion}
-    imageAlt="Български пенсионери, които се забавляват в игра на викторина"
-  >
-    <Heading2 slot="card-heading">Групови дискусии</Heading2>
-    <BodyText>
-      <em>Златни мигове</em> дава възможност да споделиш твоите знания, умения, опит
-      и идеи по разнообразни теми, както и да натрупаш такива от твоите съмишленици.
-    </BodyText>
-  </Card>
-
-  <LinkButton href="./grafik">Разгледай графика на събития</LinkButton>
+  <section class="flex flex-col gap-8">
+    <Heading2 className="text-center">Редовни събития</Heading2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 w-full gap-8 lg:gap-24">
+      <Card
+        className="w-70 lg:w-100"
+        image={EldersPlayingQuizImage}
+        imageAlt="Български пенсионери, които се забавляват в игра на викторина"
+      >
+        <Heading2 slot="card-heading">Викторини</Heading2>
+        <BodyText>
+          Предизвикай паметта си и научи нещо ново всяка седмица! Нашите
+          тематични викторини обединяват забавление с познание, за да поддържат
+          ума ти активен и свеж.
+        </BodyText>
+      </Card>
+      <Card
+        className="w-70 lg:w-100"
+        image={EldersPlayingChessImage}
+        imageAlt="Български пенсионери, които се забавляват в игра на викторина"
+      >
+        <Heading2 slot="card-heading">Настолни игри</Heading2>
+        <BodyText>
+          Раздвижи своята мисъл с настолни игри като шах и Scrabble. Няма
+          проблем ако нямаш опит с тези игри - с всеки следващ път ще ставаш
+          по-добър, и това е най-важно!
+        </BodyText>
+      </Card>
+      <Card
+        className="w-70 lg:w-100"
+        image={EldersWatchingMovieImage}
+        imageAlt="Български пенсионери, които гледат филм в непосредствена близост един до друг"
+      >
+        <Heading2 slot="card-heading">Филмови вечери</Heading2>
+        <BodyText>
+          Потопи се в спомени с твоите любими филми или в нови светове с
+          невиждани филми, в компанията на сплотена общност. Подбираме както
+          български и световни филми, така и класики и съвременни филми.
+        </BodyText>
+      </Card>
+      <Card
+        className="w-70 lg:w-100"
+        image={EldersHavingADiscussion}
+        imageAlt="Български пенсионери, които се забавляват в игра на викторина"
+      >
+        <Heading2 slot="card-heading">Групови дискусии</Heading2>
+        <BodyText>
+          <em>Златни мигове</em> дава възможност да споделиш твоите знания, умения,
+          опит и идеи по разнообразни теми, както и да натрупаш такива от твоите
+          съмишленици.
+        </BodyText>
+      </Card>
+    </div>
+    <LinkButton href="./grafik" class="mx-auto">Разгледай графика на събития</LinkButton>
+  </section>
 
   <SectionWithImage
     image={EldersCommunityImage}
@@ -97,6 +104,7 @@ import Heading1 from "../components/typography/Heading1.astro";
     image={SomethingNewEveryWeekImage}
     imageAlt="Пенсионери на една маса, обединени от общи цели и предизвикателства"
     direction="reverse"
+    className="bg-white"
   >
     <Heading2 slot="section-heading">Нещо ново всяка седмица</Heading2>
     <BodyText>
@@ -113,45 +121,53 @@ import Heading1 from "../components/typography/Heading1.astro";
       и интересни за тях!
     </BodyText>
   </SectionWithImage>
+
   <hr class="w-9/10 border border-gray-200" />
-  <Heading2>Последни новини</Heading2>
-  <Card image={EldersPlayingChessImage} imageAlt="" className="w-72">
-    <Heading2 selector="h2">Примерна статия за шах</Heading2>
-    <div class="flex flex-col gap-8 items-center">
-      <BodyText>
-        Разберете как да играете някаква игра и какви ползи има тя за вас.
-      </BodyText>
-      <LinkButton class="w-full! text-center block" href="#"
-        >Прочети още</LinkButton
-      >
+
+  <section class="gap-8 flex flex-col">
+    <Heading2 className="text-center">Последни новини</Heading2>
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <Card image={EldersPlayingChessImage} imageAlt="" className="w-72 xl:w-100">
+        <Heading2 selector="h2">Примерна статия за шах</Heading2>
+        <div class="flex flex-col gap-8 items-center">
+          <BodyText>
+            Разберете как да играете някаква игра и какви ползи има тя за вас.
+          </BodyText>
+          <LinkButton class="w-full! text-center block" href="#"
+            >Прочети още</LinkButton
+          >
+        </div>
+      </Card>
+      <Card image={EldersPlayingChessImage} imageAlt="" className="w-72 xl:w-100">
+        <Heading2 selector="h2">Примерна статия за шах</Heading2>
+        <div class="flex flex-col gap-8 items-center">
+          <BodyText>
+            Разберете как да играете някаква игра и какви ползи има тя за вас.
+          </BodyText>
+          <LinkButton class="w-full! text-center block" href="#"
+            >Прочети още</LinkButton
+          >
+        </div>
+      </Card>
+      <Card image={EldersPlayingChessImage} imageAlt="" className="w-72 xl:w-100">
+        <Heading2 selector="h2">Примерна статия за шах</Heading2>
+        <div class="flex flex-col gap-8 items-center">
+          <BodyText>
+            Разберете как да играете някаква игра и какви ползи има тя за вас.
+          </BodyText>
+          <LinkButton class="w-full! text-center block" href="#"
+            >Прочети още</LinkButton
+          >
+        </div>
+      </Card>
     </div>
-  </Card>
-  <Card image={EldersPlayingChessImage} imageAlt="" className="w-72">
-    <Heading2 selector="h2">Примерна статия за шах</Heading2>
-    <div class="flex flex-col gap-8 items-center">
-      <BodyText>
-        Разберете как да играете някаква игра и какви ползи има тя за вас.
-      </BodyText>
-      <LinkButton class="w-full! text-center block" href="#"
-        >Прочети още</LinkButton
-      >
-    </div>
-  </Card>
-  <Card image={EldersPlayingChessImage} imageAlt="" className="w-72">
-    <Heading2 selector="h2">Примерна статия за шах</Heading2>
-    <div class="flex flex-col gap-8 items-center">
-      <BodyText>
-        Разберете как да играете някаква игра и какви ползи има тя за вас.
-      </BodyText>
-      <LinkButton class="w-full! text-center block" href="#"
-        >Прочети още</LinkButton
-      >
-    </div>
-  </Card>
-  <LinkButton href="#">Виж още статии</LinkButton>
+    <LinkButton href="#" class="block mx-auto w-full! md:w-max! text-center">Виж още статии</LinkButton>
+  </section>
+
   <hr class="w-9/10 border border-gray-200" />
-  <section class="p-4">
-    <Heading2>Нашите партньори</Heading2>
+
+  <section class="p-4 flex flex-col gap-4">
+    <Heading2 className="text-center">Нашите партньори</Heading2>
     <ul
       class="flex flex-col md:flex-row md:flex-wrap md:justify-center md:items-end gap-8 md:gap-16"
     >
@@ -171,7 +187,7 @@ import Heading1 from "../components/typography/Heading1.astro";
 
 <style scoped>
   #hero-banner {
-    background-image: url('./src/assets/hero-banner.jpg');
+    background-image: url("./src/assets/hero-banner.jpg");
     background-position: center center;
     object-fit: fill;
     background-size: cover;

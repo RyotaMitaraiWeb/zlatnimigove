@@ -10,7 +10,7 @@ const { image, imageAlt, className } = Astro.props;
 ---
 
 <section class:list={['rounded-b shadow bg-white border border-[#ddd]', className]}>
-  <Image src={image} alt={imageAlt} class="w-full rounded-t h-auto" />
+  <Image src={image} alt={imageAlt} class="max-w-full rounded-t" />
   <div class="flex flex-col gap-4 p-4">
     <slot name="card-heading" />
     <slot />
