@@ -19,8 +19,8 @@ const { links, text, isMobile = true } = Astro.props;
     </div>
     <BodyText className="text-gray-700 text-xl hover:text-secondary-500 hover:underline" selector="span">{text}</BodyText>
   </button>
-  <ul class="flex flex-col gap-8">
-    {links.map(link => <li class="block"> <MobileLinkItem className="dropdown-menu-item max:w-max ml-4" text={link.text} href={link.href!} /></li>)}
+  <ul class="flex flex-col gap-8 w-max lg:border-gray-400 lg:border">
+    {links.map(link => <li class="block"> <MobileLinkItem className="dropdown-menu-item lg:w-full ml-4 lg:ml-0 lg:border-b-gray-400 lg:border-b lg:pb-4" text={link.text} href={link.href!} /></li>)}
     
   </ul>
 </div>
