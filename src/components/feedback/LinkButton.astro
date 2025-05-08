@@ -9,7 +9,7 @@ const { class: className, ...props } = Astro.props;
 
 <a
   class:list={[
-    "bg-secondary-500 w-max text-white rounded px-4 py-2 text-button-sm md:text-button-md lg:text-button-lg xl:text-button-xl",
+    "bg-secondary-500 focus:bg-white hover:bg-white hover:outline-1 focus:outline-1 focus:outline-black hover:outline-black w-max text-white hover:text-black focus:text-black rounded px-4 py-2 text-button-sm md:text-button-md lg:text-button-lg xl:text-button-xl motion-safe:transition-all active:shadow-xl",
     className,
   ]}
   {...props}
