@@ -7,12 +7,13 @@ interface Props {
   links: NavigationLink[];
   text: string;
   isMobile?: boolean;
+  desktopDisplaySide?: 'left' | 'right'
 }
 
-const { links, text, isMobile = true } = Astro.props;
+const { links, text, isMobile = true, desktopDisplaySide = 'right' } = Astro.props;
 ---
 
-<div class:list={[isMobile ? 'mobile-dropdown-menu' : 'dropdown-menu', 'w-max relative']}>
+<div class:list={[isMobile ? 'mobile-dropdown-menu' : 'dropdown-menu', desktopDisplaySide, 'w-max relative']}>
   <button class="flex items-center gap-2 cursor-pointer text-gray-700 hover:text-secondary-500">
     <div class="arrow">
       <slot name="arrow" />
@@ -102,14 +103,21 @@ const { links, text, isMobile = true } = Astro.props;
     flex-direction: row-reverse;
   }
 
+  .dropdown-menu.left ul {
+    right: 0;
+  }
+
   .dropdown-menu ul {
     position: absolute;
     top: 100%;
-    left: 0;
     z-index: 100000;
     background-color: white;
     padding: 16px 0;
     padding-right: 16px;
     border-radius: 4px;
+  }
+
+  .dropdown-menu.right ul {
+    left: 0;
   }
 </style>

@@ -13,7 +13,7 @@ import DropdownMenu from './DropdownMenu.astro';
       }
     
       if (link.children) {
-        return <DropdownMenu isMobile={false} text={link.text} links={link.children}>
+        return <DropdownMenu desktopDisplaySide="left" isMobile={false} text={link.text} links={link.children}>
           <ArrowDown slot="arrow" width={16} height={16} />
         </DropdownMenu>
       }
