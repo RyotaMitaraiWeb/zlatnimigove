@@ -38,6 +38,20 @@ const { links, text, isMobile = true } = Astro.props;
       arrow?.classList.toggle('open');
     });
 
+    if (menu.classList.contains('dropdown-menu')) {
+      menu.addEventListener('mouseover', (e) => {
+        ul.classList.remove('menu-hidden');
+        button?.classList.add('active');
+        arrow?.classList.add('open');
+      });
+
+      menu.addEventListener('mouseleave', (e) => {
+        ul.classList.add('menu-hidden');
+        button?.classList.remove('active');
+        arrow?.classList.toggle('open');
+      });
+    }
+
     button?.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
           ul.classList.add('menu-hidden');
