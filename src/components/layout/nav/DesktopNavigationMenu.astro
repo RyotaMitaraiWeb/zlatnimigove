@@ -6,14 +6,14 @@ import DropdownMenu from './DropdownMenu.astro';
 ---
 
 <nav aria-label="Навигационно меню" class="hidden lg:block">
-  <ul class="flex gap-4">
+  <ul class="flex gap-8 p-4">
     {links.map(link => {
       if (link.href) {
         return <DesktopLinkItem text={link.text} href={link.href} />
       }
     
       if (link.children) {
-        return <DropdownMenu isMobile={false} text={link.text} links={link.children}>
+        return <DropdownMenu desktopDisplaySide="left" isMobile={false} text={link.text} links={link.children}>
           <ArrowDown slot="arrow" width={16} height={16} />
         </DropdownMenu>
       }

@@ -7,20 +7,21 @@ interface Props {
   links: NavigationLink[];
   text: string;
   isMobile?: boolean;
+  desktopDisplaySide?: 'left' | 'right'
 }
 
-const { links, text, isMobile = true } = Astro.props;
+const { links, text, isMobile = true, desktopDisplaySide = 'right' } = Astro.props;
 ---
 
-<div class:list={[isMobile ? 'mobile-dropdown-menu' : 'dropdown-menu', 'w-max relative']}>
+<div class:list={[isMobile ? 'mobile-dropdown-menu' : 'dropdown-menu', desktopDisplaySide, 'w-max relative']}>
   <button class="flex items-center gap-2 cursor-pointer text-gray-700 hover:text-secondary-500">
     <div class="arrow">
       <slot name="arrow" />
     </div>
     <BodyText className="text-gray-700 text-xl hover:text-secondary-500 hover:underline" selector="span">{text}</BodyText>
   </button>
-  <ul class="flex flex-col gap-8">
-    {links.map(link => <li class="block"> <MobileLinkItem className="dropdown-menu-item max:w-max ml-4" text={link.text} href={link.href!} /></li>)}
+  <ul class="flex flex-col gap-8 w-max lg:border-gray-400 lg:border">
+    {links.map(link => <li class="block"> <MobileLinkItem className="dropdown-menu-item lg:w-full ml-4 lg:ml-0 lg:border-b-gray-400 lg:border-b lg:pb-4" text={link.text} href={link.href!} /></li>)}
     
   </ul>
 </div>
@@ -37,6 +38,20 @@ const { links, text, isMobile = true } = Astro.props;
       button.classList.toggle('active');
       arrow?.classList.toggle('open');
     });
+
+    if (menu.classList.contains('dropdown-menu')) {
+      menu.addEventListener('mouseover', (e) => {
+        ul.classList.remove('menu-hidden');
+        button?.classList.add('active');
+        arrow?.classList.add('open');
+      });
+
+      menu.addEventListener('mouseleave', (e) => {
+        ul.classList.add('menu-hidden');
+        button?.classList.remove('active');
+        arrow?.classList.toggle('open');
+      });
+    }
 
     button?.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
@@ -88,14 +103,21 @@ const { links, text, isMobile = true } = Astro.props;
     flex-direction: row-reverse;
   }
 
+  .dropdown-menu.left ul {
+    right: 0;
+  }
+
   .dropdown-menu ul {
     position: absolute;
     top: 100%;
-    left: 0;
     z-index: 100000;
     background-color: white;
     padding: 16px 0;
     padding-right: 16px;
     border-radius: 4px;
+  }
+
+  .dropdown-menu.right ul {
+    left: 0;
   }
 </style>

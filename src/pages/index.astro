@@ -19,14 +19,16 @@ import Heading1 from "../components/typography/Heading1.astro";
 <Layout>
   <section id="hero-banner" class="flex flex-col gap-4 p-8 relative z-1">
     <div class="overlay absolute top-0 left-0 w-full h-full z-2"></div>
-    <Heading1 className="text-white z-3"
-      >Почувствай се млад. Забавлявай се с нас. Предизвикай ума си.</Heading1
-    >
-    <BodyText className="text-white z-3">
-      Годините след пенсиониране са твоите златни мигове! Разнообрази
-      ежедневието си с групови интелектуални игри и дейности, с които да
-      поддържаш ума си свеж и да се запознаеш със съмишленици!
-    </BodyText>
+    <div class="flex flex-col gap-8 py-8">
+      <Heading1 className="text-white z-3"
+        >Почувствай се млад. Забавлявай се с нас. Предизвикай ума си.</Heading1
+      >
+      <BodyText className="text-white z-3">
+        Годините след пенсиониране са твоите златни мигове! Разнообрази
+        ежедневието си с групови интелектуални игри и дейности, с които да
+        поддържаш ума си свеж и да се запознаеш със съмишленици!
+      </BodyText>
+    </div>
     <LinkButton class="z-3 w-full! text-center md:w-max!" href="#"
       >Запиши се за събитие</LinkButton
     >
@@ -35,7 +37,7 @@ import Heading1 from "../components/typography/Heading1.astro";
     <Heading2 className="text-center">Редовни събития</Heading2>
     <div class="grid grid-cols-1 lg:grid-cols-2 w-full gap-8 lg:gap-24">
       <Card
-        className="w-70 lg:w-100"
+        className="w-70 lg:w-100 mx-auto"
         image={EldersPlayingQuizImage}
         imageAlt="Български пенсионери, които се забавляват в игра на викторина"
       >
@@ -47,7 +49,7 @@ import Heading1 from "../components/typography/Heading1.astro";
         </BodyText>
       </Card>
       <Card
-        className="w-70 lg:w-100"
+        className="w-70 lg:w-100 mx-auto"
         image={EldersPlayingChessImage}
         imageAlt="Български пенсионери, които се забавляват в игра на викторина"
       >
@@ -59,7 +61,7 @@ import Heading1 from "../components/typography/Heading1.astro";
         </BodyText>
       </Card>
       <Card
-        className="w-70 lg:w-100"
+        className="w-70 lg:w-100 mx-auto"
         image={EldersWatchingMovieImage}
         imageAlt="Български пенсионери, които гледат филм в непосредствена близост един до друг"
       >
@@ -71,7 +73,7 @@ import Heading1 from "../components/typography/Heading1.astro";
         </BodyText>
       </Card>
       <Card
-        className="w-70 lg:w-100"
+        className="w-70 lg:w-100 mx-auto"
         image={EldersHavingADiscussion}
         imageAlt="Български пенсионери, които се забавляват в игра на викторина"
       >
@@ -83,7 +85,9 @@ import Heading1 from "../components/typography/Heading1.astro";
         </BodyText>
       </Card>
     </div>
-    <LinkButton href="./grafik" class="mx-auto">Разгледай графика на събития</LinkButton>
+    <LinkButton href="./grafik" class="mx-auto"
+      >Разгледай графика на събития</LinkButton
+    >
   </section>
 
   <SectionWithImage
@@ -127,7 +131,11 @@ import Heading1 from "../components/typography/Heading1.astro";
   <section class="gap-8 flex flex-col">
     <Heading2 className="text-center">Последни новини</Heading2>
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-      <Card image={EldersPlayingChessImage} imageAlt="" className="w-72 xl:w-100">
+      <Card
+        image={EldersPlayingChessImage}
+        imageAlt=""
+        className="w-72 xl:w-100"
+      >
         <Heading2 selector="h2">Примерна статия за шах</Heading2>
         <div class="flex flex-col gap-8 items-center">
           <BodyText>
@@ -138,7 +146,11 @@ import Heading1 from "../components/typography/Heading1.astro";
           >
         </div>
       </Card>
-      <Card image={EldersPlayingChessImage} imageAlt="" className="w-72 xl:w-100">
+      <Card
+        image={EldersPlayingChessImage}
+        imageAlt=""
+        className="w-72 xl:w-100"
+      >
         <Heading2 selector="h2">Примерна статия за шах</Heading2>
         <div class="flex flex-col gap-8 items-center">
           <BodyText>
@@ -149,7 +161,11 @@ import Heading1 from "../components/typography/Heading1.astro";
           >
         </div>
       </Card>
-      <Card image={EldersPlayingChessImage} imageAlt="" className="w-72 xl:w-100">
+      <Card
+        image={EldersPlayingChessImage}
+        imageAlt=""
+        className="w-72 xl:w-100"
+      >
         <Heading2 selector="h2">Примерна статия за шах</Heading2>
         <div class="flex flex-col gap-8 items-center">
           <BodyText>
@@ -161,7 +177,9 @@ import Heading1 from "../components/typography/Heading1.astro";
         </div>
       </Card>
     </div>
-    <LinkButton href="#" class="block mx-auto w-full! md:w-max! text-center">Виж още статии</LinkButton>
+    <LinkButton href="#" class="block mx-auto w-full! md:w-max! text-center"
+      >Виж още статии</LinkButton
+    >
   </section>
 
   <hr class="w-9/10 border border-gray-200" />
